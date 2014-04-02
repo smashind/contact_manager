@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-group :production do
+group :production, :staging do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 group :development, :test do
