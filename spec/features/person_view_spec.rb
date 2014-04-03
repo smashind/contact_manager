@@ -47,4 +47,15 @@ describe 'the person view', type: :feature do
 		expect(page).to have_content('555-9191')
 		expect(page).to_not have_content(old_number)
 	end
+
+	it 'destroys a phone number' do
+		phone = person.phone_numbers.first
+		old_number = phone.number 
+
+		first(:link, 'Delete').click
+		# page.driver.browser.switch_to.alert.accept
+		expect(current_path).to eq(person_path(person))
+		expect(page).to_not have_content(old_number)
+	end
+
 end
