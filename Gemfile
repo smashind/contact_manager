@@ -6,6 +6,7 @@ gem 'rails', '4.0.3'
 group :production, :staging do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'capybara'
 end
 
 group :development, :test do
