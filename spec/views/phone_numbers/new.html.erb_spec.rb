@@ -4,7 +4,7 @@ describe "phone_numbers/new" do
   before(:each) do
     assign(:phone_number, stub_model(PhoneNumber,
       :number => "MyString",
-      :person_id => 1
+      :contact_id => 1
     ).as_new_record)
   end
 
