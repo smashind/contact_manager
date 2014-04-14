@@ -3,9 +3,12 @@ ContactManager::Application.routes.draw do
 
   resources :email_addresses
 
-  resources :phone_numbers
+  resources :phone_numbers, :except => [:index, :show]
 
   resources :people
+
+  # get '/phone_numbers/:id', to: redirect('/people')
+  # get '/phone_numbers/', to: redirect('/person')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
