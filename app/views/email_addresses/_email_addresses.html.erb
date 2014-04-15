@@ -1,0 +1,10 @@
+<h4>Email Addresses</h4>
+<% if email_addresses.exists? %>
+<ul>
+	<% email_addresses.each do |email| %>
+		<li><%= email.address %> <%= link_to('Edit Address', edit_email_address_path(email)) %> <%= link_to "Delete Address", email_address_path(email), method: :delete %></li>
+	<% end %>
+</ul>
+<% else %>
+<p>No email addresses yet.</p>
+<% end %>

@@ -10,27 +10,9 @@
   <%= @person.last_name %>
 </p>
 
-<h4>Phone Numbers</h4>
-<% if @person.phone_numbers.exists? %>
-<ul>
-	<% @person.phone_numbers.each do |phone| %>
-		<li><%= phone.number %> <%= link_to('Edit Number', edit_phone_number_path(phone)) %> <%= link_to "Delete Number", phone_number_path(phone), method: :delete %></li>
-	<% end %>
-</ul>
-<% else %>
-<p>No phone numbers yet.</p>
-<% end %>
+<%= render 'phone_numbers/phone_numbers', :phone_numbers => @person.phone_numbers %>
 
-<h4>Email Addresses</h4>
-<% if @person.email_addresses.exists? %>
-<ul>
-	<% @person.email_addresses.each do |email| %>
-		<li><%= email.address %> <%= link_to('Edit Address', edit_email_address_path(email)) %> <%= link_to "Delete Address", email_address_path(email), method: :delete %></li>
-	<% end %>
-</ul>
-<% else %>
-<p>No email addresses yet.</p>
-<% end %>
+<%= render 'email_addresses/email_addresses', :email_addresses => @person.email_addresses %>
 
 
 <%= link_to 'Add phone number', new_phone_number_path(contact_id: @person.id, contact_type: 'Person') %> | 
