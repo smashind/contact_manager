@@ -17,4 +17,5 @@ describe "email_addresses/new" do
       assert_select "input#email_address_contact_id[name=?]", "email_address[contact_id]"
     end
   end
+
 end

@@ -1,4 +1,5 @@
 ContactManager::Application.routes.draw do
+  root "pages#home"
   resources :companies
 
   resources :email_addresses, :except => [:index, :show]
