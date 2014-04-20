@@ -19,6 +19,9 @@ gem 'thin'
 
 gem "haml", "~> 3.1.8"
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
